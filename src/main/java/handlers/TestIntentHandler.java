@@ -21,6 +21,7 @@ public class TestIntentHandler implements RequestHandler {
 
     @Override
     public Optional<Response> handle(HandlerInput input) {
+        Class.forName("com.mysql.jdbc.Driver");
       String speechText;
         try {
           Connection con = DriverManager.getConnection( "diethelper-201120:us-east1:users://35.185.24.120", "root", "DietHelper" );
