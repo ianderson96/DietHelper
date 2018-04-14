@@ -7,16 +7,16 @@ import com.amazon.ask.request.Predicates;
 
 import java.util.Optional;
 
-public class OneRestrictionHandler implements RequestHandler {
+public class TestIntentHandler implements RequestHandler {
 
     @Override
     public boolean canHandle(HandlerInput input) {
-        return input.matches(Predicates.intentName("OneRestrictionHandler"));
+        return input.matches(Predicates.intentName("TestIntentHandler"));
     }
 
     @Override
     public Optional<Response> handle(HandlerInput input) {
-        String speechText = "Hello world";
+        String speechText = "Hello world: you are in the test intent";
 
         return input.getResponseBuilder()
                 .withSpeech(speechText)
