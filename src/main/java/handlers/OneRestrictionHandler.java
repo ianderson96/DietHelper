@@ -2,9 +2,10 @@ package handlers;
 
 import com.amazon.ask.dispatcher.request.handler.HandlerInput;
 import com.amazon.ask.dispatcher.request.handler.RequestHandler;
-import com.amazon.ask.model.Response;
+import com.amazon.ask.model.*;
 import com.amazon.ask.request.Predicates;
 
+import java.util.Map;
 import java.util.Optional;
 
 public class OneRestrictionHandler implements RequestHandler {
@@ -16,7 +17,18 @@ public class OneRestrictionHandler implements RequestHandler {
 
     @Override
     public Optional<Response> handle(HandlerInput input) {
-        String speechText = "Hello world";
+        Request request = input.getRequestEnvelope().getRequest();
+        IntentRequest intentRequest = (IntentRequest) request;
+        Intent intent = intentRequest.getIntent();
+        Map<String, Slot> slots = intent.getSlots();
+
+        Slot foodSlot = slots.get("food");
+        Slot dietSlot = slots.get("diet");
+
+        String foodText = foodSlot.getValue();
+        String dietText = dietSlot.getValue();
+
+        String speechText = String.format("The food is: "+foodText+" The diet is: "+dietText);
 
         return input.getResponseBuilder()
                 .withSpeech(speechText)
