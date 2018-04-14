@@ -8,15 +8,26 @@ import java.io.DataOutputStream;
 import java.io.InputStreamReader;
 
 public class ApiHandler {
-        private final String USER_AGENT = "Mozilla/5.0";
 
-            ApiHandler http = new ApiHandler();
-            http.sendGet();
+    private final String USER_AGENT = "Mozilla/5.0";
+
+    public static void main(String[] args) throws Exception {
+
+
+
+    }
+
+    public String getProductInfo (int productID) {
+        System.out.println("Testing 1 - Send Http GET request");
+        this.sendGet("https://spoonacular-recipe-food-nutrition-v1.p.mashape.com" +
+                "/food/products/22347");
+    }
+
 
         // HTTP GET request
-        private void sendGet() throws Exception {
+        public void sendGet(String url) throws Exception {
 
-            String url = "https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/food/products/334\"";
+//            String url = "https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/food/products/33423";
 
             URL obj = new URL(url);
             HttpURLConnection con = (HttpURLConnection) obj.openConnection();
@@ -26,6 +37,8 @@ public class ApiHandler {
 
             //add request header
             con.setRequestProperty("User-Agent", USER_AGENT);
+            con.setRequestProperty("X-Mashape-Key", "sR6MoRG1yDmsh2PVbmG1Sh4AhMtUp1hOTjBjsnVZ7lj4iDB5ER");
+
 
             int responseCode = con.getResponseCode();
             System.out.println("\nSending 'GET' request to URL : " + url);
@@ -42,10 +55,9 @@ public class ApiHandler {
             in.close();
 
             //print result
-            System.out.println(response.toString());
+            return response.toString());
 
         }
 
     }
 
-}
