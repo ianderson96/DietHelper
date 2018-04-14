@@ -15,7 +15,7 @@ public class DietHelperStreamHandler extends SkillStreamHandler {
 
     private static Skill getSkill() {
         return Skills.standard()
-                .addRequestHandlers(new CancelandStopIntentHandler(), new OneRestrictionHandler(), new HelpIntentHandler(), new LaunchRequestHandler(), new SessionEndedRequestHandler())
+                .addRequestHandlers(new CancelandStopIntentHandler(), new OneRestrictionHandler(), new HelpIntentHandler(), new LaunchRequestHandler(), new SessionEndedRequestHandler()).withSkillId("amzn1.ask.skill.51ecd59b-980d-441d-8162-67f511ad2481")
                 .build();
     }
 
