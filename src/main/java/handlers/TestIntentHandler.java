@@ -1,5 +1,10 @@
 package handlers;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
+
 import com.amazon.ask.dispatcher.request.handler.HandlerInput;
 import com.amazon.ask.dispatcher.request.handler.RequestHandler;
 import com.amazon.ask.model.Response;
@@ -16,7 +21,15 @@ public class TestIntentHandler implements RequestHandler {
 
     @Override
     public Optional<Response> handle(HandlerInput input) {
-        String speechText = "Hello world: you are in the test intent";
+      String speechText;
+        try {
+          Connection con = DriverManager.getConnection( "diethelper-201120:us-east1:users://35.185.24.120", "root", "DietHelper" );
+          speechText = "Hello world: you are in the test intent";
+        }
+          catch ( SQLException err ) {
+          speechText = err.getMessage( );
+        }
+        
 
         return input.getResponseBuilder()
                 .withSpeech(speechText)
