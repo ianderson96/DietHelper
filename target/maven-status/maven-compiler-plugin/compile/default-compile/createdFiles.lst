@@ -1,0 +1,7 @@
+DietHelperStreamHandler.class
+handlers/LaunchRequestHandler.class
+handlers/TestIntentHandler.class
+handlers/CancelandStopIntentHandler.class
+handlers/SessionEndedRequestHandler.class
+handlers/HelpIntentHandler.class
+handlers/OneRestrictionHandler.class
