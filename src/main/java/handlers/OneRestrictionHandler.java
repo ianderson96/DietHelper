@@ -1,26 +1,26 @@
+package handlers;
+
 import com.amazon.ask.dispatcher.request.handler.HandlerInput;
 import com.amazon.ask.dispatcher.request.handler.RequestHandler;
 import com.amazon.ask.model.Response;
-//import com.amazon.ask.request.Predicates.intentName;
+import com.amazon.ask.request.Predicates;
 
 import java.util.Optional;
 
-import static com.amazon.ask.request.Predicates.intentName;
-
-public class HelpIntentHandler implements RequestHandler {
+public class OneRestrictionHandler implements RequestHandler {
 
     @Override
     public boolean canHandle(HandlerInput input) {
-        return input.matches(intentName("AMAZON.HelpIntent"));
+        return input.matches(Predicates.intentName("OneRestrictionIntent"));
     }
 
     @Override
     public Optional<Response> handle(HandlerInput input) {
-        String speechText = "You can say hello to me!";
+        String speechText = "Hello world";
         return input.getResponseBuilder()
                 .withSpeech(speechText)
                 .withSimpleCard("HelloWorld", speechText)
-                .withReprompt(speechText)
                 .build();
     }
+
 }
