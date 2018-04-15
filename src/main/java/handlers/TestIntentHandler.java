@@ -11,6 +11,7 @@ import com.amazon.ask.model.Response;
 import com.amazon.ask.request.Predicates;
 
 import java.util.Optional;
+import java.util.Properties;
 
 public class TestIntentHandler implements RequestHandler {
 
