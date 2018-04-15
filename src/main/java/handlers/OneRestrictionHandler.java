@@ -45,6 +45,7 @@ public class OneRestrictionHandler implements RequestHandler {
 //            speechText = String.format("The food is: "+foodText+" The diet is: "+dietText);
             if (this.parseUserDiet(dietText) != null) {
                 parsedDietText = this.parseUserDiet(dietText);
+                System.out.println("The parsed diet text is: " + parsedDietText);
                 Boolean bool = api.containsBadge(foodText, parsedDietText);
                 if (bool) {
                     speechText = String.format("Yes, "+foodText+" is "+dietText);
@@ -73,8 +74,6 @@ public class OneRestrictionHandler implements RequestHandler {
         }else{
             speechText = String.format("Sorry that was in an invalid request");
         }
-
-
 
         return input.getResponseBuilder()
                 .withSpeech(speechText)
