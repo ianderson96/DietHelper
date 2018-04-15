@@ -61,7 +61,7 @@ public class OneRestrictionPluralHandler implements RequestHandler {
                 speechText = String.format("I do not understand "+dietText);
             }
         }else{
-            speechText = String.format("Sorry, that was in an invalid request");
+            speechText = String.format("Sorry I didn't understand what you said. What I heard was is " + foodText + dietText);
         }
 
         return input.getResponseBuilder()
