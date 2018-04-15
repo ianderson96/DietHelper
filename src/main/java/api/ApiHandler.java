@@ -17,9 +17,12 @@ public class ApiHandler {
 
     public static void main(String[] args) throws Exception {
         ApiHandler api = new ApiHandler();
-        String food = new String("rice chex");
-        String badge = new String("wheat_free");
-        System.out.println(api.containsBadge(food, badge));
+        String food = new String("carrots");
+        String badge = new String("sesame_free");
+        String ingredient = new String("salt");
+//        System.out.println(api.containsBadge(food, badge));
+        System.out.println(api.containsIngredient(food, ingredient));
+
     }
 
     private String getProductInfo(String productID) {
@@ -76,12 +79,35 @@ public class ApiHandler {
         return result;
     }
 
+    private ArrayList<String> getIngredientArray(String product) {
+        String id = this.getProductId(product);
+        String productInfo = this.getProductInfo(id);
+        JSONObject productJSON = new JSONObject(productInfo);
+        JSONArray ingredients = productJSON.getJSONArray("ingredients");
+        ArrayList<String> result = new ArrayList<String>();
+        if (ingredients != null) {
+            for (int i=0;i<ingredients.length();i++){
+                result.add(ingredients.getJSONObject(i).getString("name"));
+            }
+        }
+        return result;
+    }
+
     public Boolean containsBadge(String food, String badge) {
         ArrayList<String> badges = this.getBadgeArray(food);
         if (badge.equals("wheat_free")) {
             return badges.contains("wheat_free") || badges.contains("gluten_free");
         }
         return badges.contains(badge);
+    }
+
+    public Boolean containsIngredient(String food, String ingredient) {
+        ArrayList<String> ingredients = this.getIngredientArray(food);
+        System.out.println(ingredients);
+        if (ingredient.equals("wheat_free")) {
+            return ingredient.contains("wheat_free") || ingredient.contains("gluten_free");
+        }
+        return ingredient.contains(ingredient);
     }
 
 
