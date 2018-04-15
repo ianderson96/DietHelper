@@ -86,7 +86,7 @@ public class ApiHandler {
         catch (Exception e) {
             System.out.println("Error with connection - get Product Name");
         }
-        return result;
+        return result.replace("&","and");
     }
 
     private ArrayList<String> getBadgeArray(String product) {
