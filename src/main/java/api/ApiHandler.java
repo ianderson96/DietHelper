@@ -17,8 +17,8 @@ public class ApiHandler {
 
     public static void main(String[] args) throws Exception {
         ApiHandler api = new ApiHandler();
-        String food = new String("carrots");
-        String badge = new String("sesame_free");
+        String food = new String("twizzlers");
+        String badge = new String("vegan");
         String ingredient = new String("salt");
 //        System.out.println(api.containsBadge(food, badge));
         System.out.println(api.containsIngredient(food, ingredient));
@@ -34,7 +34,7 @@ public class ApiHandler {
 
         }
         catch (Exception e) {
-            System.out.println("Error with connection");
+            System.out.println("Error with connection - get Product info");
         }
         return result;
     }
@@ -59,7 +59,7 @@ public class ApiHandler {
             result = firstItem.get("id").toString();
         }
         catch (Exception e) {
-            System.out.println("Error with connection");
+            System.out.println("Error with connection - get Product ID");
         }
         return result;
     }
