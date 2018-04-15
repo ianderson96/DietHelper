@@ -1,6 +1,8 @@
-/Users/iananderson/Documents/DietHelper/DietHelper/src/main/java/handlers/OneRestrictionHandler.java
-/Users/iananderson/Documents/DietHelper/DietHelper/src/main/java/handlers/CancelandStopIntentHandler.java
-/Users/iananderson/Documents/DietHelper/DietHelper/src/main/java/handlers/HelpIntentHandler.java
-/Users/iananderson/Documents/DietHelper/DietHelper/src/main/java/handlers/SessionEndedRequestHandler.java
-/Users/iananderson/Documents/DietHelper/DietHelper/src/main/java/handlers/LaunchRequestHandler.java
-/Users/iananderson/Documents/DietHelper/DietHelper/src/main/java/DietHelperStreamHandler.java
+/home/gage/hackathon/DietHelper/src/main/java/handlers/CancelandStopIntentHandler.java
+/home/gage/hackathon/DietHelper/src/main/java/api/ApiHandler.java
+/home/gage/hackathon/DietHelper/src/main/java/handlers/OneRestrictionHandler.java
+/home/gage/hackathon/DietHelper/src/main/java/handlers/HelpIntentHandler.java
+/home/gage/hackathon/DietHelper/src/main/java/DietHelperStreamHandler.java
+/home/gage/hackathon/DietHelper/src/main/java/handlers/TestIntentHandler.java
+/home/gage/hackathon/DietHelper/src/main/java/handlers/LaunchRequestHandler.java
+/home/gage/hackathon/DietHelper/src/main/java/handlers/SessionEndedRequestHandler.java
