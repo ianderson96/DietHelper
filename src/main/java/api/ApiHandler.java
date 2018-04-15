@@ -64,6 +64,31 @@ public class ApiHandler {
         return result;
     }
 
+    public String getProductName(String product) {
+        String encodedProduct = new String();
+        try {
+            encodedProduct = URLEncoder.encode(product, "UTF-8");
+        }
+        catch (UnsupportedEncodingException e) {
+            System.out.println("encoding doesn't work");
+        }
+        String url = new String("https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/food/products/search?query=");
+        url = url + encodedProduct;
+        String response = new String();
+        String result = new String();
+        try {
+            response = this.sendGet(url);
+            JSONObject wholeResponse = new JSONObject(response);
+            JSONArray productList = wholeResponse.getJSONArray("products");
+            JSONObject firstItem = productList.getJSONObject(1);
+            result = firstItem.get("title").toString();
+        }
+        catch (Exception e) {
+            System.out.println("Error with connection - get Product Name");
+        }
+        return result;
+    }
+
     private ArrayList<String> getBadgeArray(String product) {
         String id = this.getProductId(product);
         String productInfo = this.getProductInfo(id);
