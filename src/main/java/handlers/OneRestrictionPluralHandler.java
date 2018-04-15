@@ -38,10 +38,10 @@ public class OneRestrictionPluralHandler implements RequestHandler {
 
         String speechText;
         String parsedDietText;
+        //run food diet call
+        String foodText = foodSlot.getValue();
+        String dietText = dietSlot.getValue();
         if(foodSlot.getValue() != null && dietSlot.getValue() != null){
-            //run food diet call
-            String foodText = foodSlot.getValue();
-            String dietText = dietSlot.getValue();
             String foodTitle = api.getProductName(foodText);
 //            speechText = String.format("The food is: "+foodText+" The diet is: "+dietText);
             if (this.parseUserDiet(dietText) != null) {
