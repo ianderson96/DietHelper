@@ -19,9 +19,9 @@ public class ApiHandler {
         ApiHandler api = new ApiHandler();
         String food = new String("twizzlers");
         String badge = new String("vegan");
-        String ingredient = new String("salt");
-        System.out.println(api.containsBadge(food, badge));
-//        System.out.println(api.containsIngredient(food, ingredient));
+        String ingredient = new String("human");
+//        System.out.println(api.containsBadge(food, badge));
+        System.out.println(api.containsIngredient(food, ingredient));
 
     }
 
@@ -105,9 +105,9 @@ public class ApiHandler {
         ArrayList<String> ingredients = this.getIngredientArray(food);
         System.out.println(ingredients);
         if (ingredient.equals("wheat_free")) {
-            return ingredient.contains("wheat_free") || ingredient.contains("gluten_free");
+            return ingredients.contains("wheat_free") || ingredients.contains("gluten_free");
         }
-        return ingredient.contains(ingredient);
+        return ingredients.contains(ingredient);
     }
 
 
