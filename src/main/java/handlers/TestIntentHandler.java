@@ -30,11 +30,7 @@ public class TestIntentHandler implements RequestHandler {
         try {
           String databaseName = "Users";
           String instanceConnectionName = "diethelper-201120:us-east1:users";
-          String jdbcUrl = String.format(
-    "jdbc:mysql://google/%s?cloudSqlInstance=%s&"
-        + "socketFactory=com.google.cloud.sql.mysql.SocketFactory",
-    databaseName,
-    instanceConnectionName);
+          String jdbcUrl = "jdbc:mysql://google/%s?cloudSqlInstance=%s&socketFactory=com.google.cloud.sql.mysql.SocketFactory:"+instanceConnectionName+"/"+instancedatabaseName+"?user=root");
           Connection con = DriverManager.getConnection(jdbcUrl, "root", "DietHelper" );
           speechText = "Hello world: you are in the test intent";
         }
