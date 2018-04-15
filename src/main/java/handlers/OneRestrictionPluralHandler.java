@@ -85,6 +85,7 @@ public class OneRestrictionPluralHandler implements RequestHandler {
         dietMap.put("paleo","paleo");
         dietMap.put("vegan","vegan");
         dietMap.put("vegetarian","vegetarian");
+        dietMap.put("pescetarian","pescetarian");
         dietMap.put("primal","primal");
         dietMap.put("whole thirty","whole_30");
         dietMap.put("whole 30","whole_30");
