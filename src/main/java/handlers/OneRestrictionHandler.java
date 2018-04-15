@@ -29,7 +29,9 @@ public class OneRestrictionHandler implements RequestHandler {
         Slot dietSlot = slots.get("diet");
         Slot ingredientSlot = slots.get("ingredient");
 
-
+        System.out.println("foodslot: "+foodSlot);
+        System.out.println("dietSlot: "+dietSlot);
+        System.out.println("ingredientSlot: "+ingredientSlot);
 
         String speechText;
         if(foodSlot != null && dietSlot != null){
