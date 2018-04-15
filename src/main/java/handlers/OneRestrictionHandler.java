@@ -17,6 +17,8 @@ public class OneRestrictionHandler implements RequestHandler {
 
     @Override
     public Optional<Response> handle(HandlerInput input) {
+
+
         Request request = input.getRequestEnvelope().getRequest();
         IntentRequest intentRequest = (IntentRequest) request;
         Intent intent = intentRequest.getIntent();
