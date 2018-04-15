@@ -37,7 +37,7 @@ public class OneRestrictionHandler implements RequestHandler {
             String foodText = foodSlot.getValue();
             String dietText = dietSlot.getValue();
             speechText = String.format("The food is: "+foodText+" The diet is: "+dietText);
-        }else if(foodSlot != null && ingredientSlot != null){
+        }else if(ingredientSlot != null){
             //Check if food as ingredients
             String foodText = foodSlot.getValue();
             String ingredientText = ingredientSlot.getValue();
