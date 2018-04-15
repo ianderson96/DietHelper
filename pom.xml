@@ -65,7 +65,7 @@
             <groupId>org.clojure</groupId>
             <artifactId>java.jdbc</artifactId>
             <version>0.7.5</version>
-]        </dependency>
+        </dependency>
     </dependencies>
 
 
