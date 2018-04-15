@@ -1,10 +1,11 @@
 package api;
 
-import javax.net.ssl.HttpsURLConnection;
+import org.json.JSONArray;
+import org.json.JSONObject;
+
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.io.BufferedReader;
-import java.io.DataOutputStream;
 import java.io.InputStreamReader;
 
 public class ApiHandler {
@@ -12,20 +13,46 @@ public class ApiHandler {
     private final String USER_AGENT = "Mozilla/5.0";
 
     public static void main(String[] args) throws Exception {
-
-
-
+        ApiHandler api = new ApiHandler();
+        String id = api.getProductId("twizzlers");
+        System.out.println(api.getProductInfo(id));
     }
 
-    public String getProductInfo (int productID) {
-        System.out.println("Testing 1 - Send Http GET request");
-        this.sendGet("https://spoonacular-recipe-food-nutrition-v1.p.mashape.com" +
-                "/food/products/22347");
+    public String getProductInfo(String productID) {
+        String url = new String("https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/food/products/");
+        url = url + productID;
+        String result = new String();
+        try {
+            result = this.sendGet(url);
+
+        }
+        catch (Exception e) {
+            System.out.println("Error with connection");
+        }
+        return result;
+    }
+
+    public String getProductId(String product) {
+        String url = new String("https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/food/products/search?query=");
+        url = url + product;
+        String response = new String();
+        String result = new String();
+        try {
+            response = this.sendGet(url);
+            JSONObject wholeResponse = new JSONObject(response);
+            JSONArray productList = wholeResponse.getJSONArray("products");
+            JSONObject firstItem = productList.getJSONObject(1);
+            result = firstItem.get("id").toString();
+        }
+        catch (Exception e) {
+            System.out.println("Error with connection");
+        }
+        return result;
     }
 
 
         // HTTP GET request
-        public void sendGet(String url) throws Exception {
+        public String sendGet(String url) throws Exception {
 
 //            String url = "https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/food/products/33423";
 
@@ -39,11 +66,7 @@ public class ApiHandler {
             con.setRequestProperty("User-Agent", USER_AGENT);
             con.setRequestProperty("X-Mashape-Key", "sR6MoRG1yDmsh2PVbmG1Sh4AhMtUp1hOTjBjsnVZ7lj4iDB5ER");
 
-
             int responseCode = con.getResponseCode();
-            System.out.println("\nSending 'GET' request to URL : " + url);
-            System.out.println("Response Code : " + responseCode);
-
             BufferedReader in = new BufferedReader(
                     new InputStreamReader(con.getInputStream()));
             String inputLine;
@@ -55,7 +78,7 @@ public class ApiHandler {
             in.close();
 
             //print result
-            return response.toString());
+            return response.toString();
 
         }
 
