@@ -3,10 +3,13 @@ package api;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import java.io.UnsupportedEncodingException;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.net.URLEncoder;
+import java.util.ArrayList;
 
 public class ApiHandler {
 
@@ -14,11 +17,12 @@ public class ApiHandler {
 
     public static void main(String[] args) throws Exception {
         ApiHandler api = new ApiHandler();
-        String id = api.getProductId("twizzlers");
-        System.out.println(api.getProductInfo(id));
+        String food = new String("rice chex");
+        String badge = new String("wheat_free");
+        System.out.println(api.containsBadge(food, badge));
     }
 
-    public String getProductInfo(String productID) {
+    private String getProductInfo(String productID) {
         String url = new String("https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/food/products/");
         url = url + productID;
         String result = new String();
@@ -32,9 +36,16 @@ public class ApiHandler {
         return result;
     }
 
-    public String getProductId(String product) {
+    private String getProductId(String product) {
+        String encodedProduct = new String();
+        try {
+            encodedProduct = URLEncoder.encode(product, "UTF-8");
+        }
+        catch (UnsupportedEncodingException e) {
+            System.out.println("encoding doesn't work");
+        }
         String url = new String("https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/food/products/search?query=");
-        url = url + product;
+        url = url + encodedProduct;
         String response = new String();
         String result = new String();
         try {
@@ -50,6 +61,29 @@ public class ApiHandler {
         return result;
     }
 
+    private ArrayList<String> getBadgeArray(String product) {
+        String id = this.getProductId(product);
+        String productInfo = this.getProductInfo(id);
+        JSONObject productJSON = new JSONObject(productInfo);
+        JSONArray badges = productJSON.getJSONArray("badges");
+        System.out.println(badges.toString());
+        ArrayList<String> result = new ArrayList<String>();
+        if (badges != null) {
+            for (int i=0;i<badges.length();i++){
+                result.add(badges.getString(i));
+            }
+        }
+        return result;
+    }
+
+    public Boolean containsBadge(String food, String badge) {
+        ArrayList<String> badges = this.getBadgeArray(food);
+        if (badge.equals("wheat_free")) {
+            return badges.contains("wheat_free") || badges.contains("gluten_free");
+        }
+        return badges.contains(badge);
+    }
+
 
         // HTTP GET request
         public String sendGet(String url) throws Exception {
@@ -59,10 +93,9 @@ public class ApiHandler {
             URL obj = new URL(url);
             HttpURLConnection con = (HttpURLConnection) obj.openConnection();
 
-            // optional default is GET
             con.setRequestMethod("GET");
 
-            //add request header
+            //add request headers
             con.setRequestProperty("User-Agent", USER_AGENT);
             con.setRequestProperty("X-Mashape-Key", "sR6MoRG1yDmsh2PVbmG1Sh4AhMtUp1hOTjBjsnVZ7lj4iDB5ER");
 
