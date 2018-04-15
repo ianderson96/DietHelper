@@ -34,12 +34,12 @@ public class OneRestrictionHandler implements RequestHandler {
         System.out.println("ingredientSlot: "+ingredientSlot);
 
         String speechText;
-        if(foodSlot != null && dietSlot != null){
+        if(foodSlot.getValue() != null && dietSlot.getValue() != null){
             //run food diet call
             String foodText = foodSlot.getValue();
             String dietText = dietSlot.getValue();
             speechText = String.format("The food is: "+foodText+" The diet is: "+dietText);
-        }else if(ingredientSlot != null){
+        }else if(ingredientSlot.getValue() != null){
             //Check if food as ingredients
             String foodText = foodSlot.getValue();
             String ingredientText = ingredientSlot.getValue();
