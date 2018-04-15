@@ -59,8 +59,8 @@
       <file leaf-file-name="TestIntentHandler.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/handlers/TestIntentHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="615">
-              <caret line="51" column="1" lean-forward="true" selection-start-line="51" selection-start-column="1" selection-end-line="51" selection-end-column="1" />
+            <state relative-caret-position="315">
+              <caret line="31" column="35" lean-forward="true" selection-start-line="31" selection-start-column="35" selection-end-line="31" selection-end-column="35" />
               <folding>
                 <element signature="e#470#471#0" expanded="true" />
                 <element signature="e#550#551#0" expanded="true" />
@@ -150,9 +150,9 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="4">
-    <option name="x" value="962" />
+    <option name="x" value="305" />
     <option name="y" value="25" />
-    <option name="width" value="958" />
+    <option name="width" value="1615" />
     <option name="height" value="1055" />
   </component>
   <component name="ProjectLevelVcsManager">
@@ -782,8 +782,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/handlers/TestIntentHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="615">
-          <caret line="51" column="1" lean-forward="true" selection-start-line="51" selection-start-column="1" selection-end-line="51" selection-end-column="1" />
+        <state relative-caret-position="315">
+          <caret line="31" column="35" lean-forward="true" selection-start-line="31" selection-start-column="35" selection-end-line="31" selection-end-column="35" />
           <folding>
             <element signature="e#470#471#0" expanded="true" />
             <element signature="e#550#551#0" expanded="true" />
@@ -808,7 +808,7 @@
       </state>
       <state key="FacetStructureConfigurable.UI">
         <settings>
-          <last-edited>No facets are configured</last-edited>
+          <last-edited />
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -867,7 +867,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>Maven: com.amazon.alexa:ask-sdk-apache-client:2.0.2</last-edited>
+          <last-edited />
           <splitter-proportions>
             <option name="proportions">
               <list>
