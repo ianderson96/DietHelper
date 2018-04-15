@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="31a54ccb-b957-4cd1-8517-f7dfd19adf8a" name="Default" comment="" />
+    <list default="true" id="31a54ccb-b957-4cd1-8517-f7dfd19adf8a" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -68,8 +70,8 @@
       <file leaf-file-name="TestIntentHandler.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/handlers/TestIntentHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="435">
-              <caret line="39" column="8" selection-start-line="39" selection-start-column="8" selection-end-line="39" selection-end-column="8" />
+            <state relative-caret-position="255">
+              <caret line="27" column="41" lean-forward="true" selection-start-line="27" selection-start-column="41" selection-end-line="27" selection-end-column="41" />
               <folding>
                 <element signature="e#470#471#0" expanded="true" />
                 <element signature="e#550#551#0" expanded="true" />
@@ -159,9 +161,9 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="4">
-    <option name="x" value="640" />
+    <option name="x" value="480" />
     <option name="y" value="25" />
-    <option name="width" value="1280" />
+    <option name="width" value="1440" />
     <option name="height" value="1055" />
   </component>
   <component name="ProjectLevelVcsManager">
@@ -302,7 +304,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="640" y="25" width="1280" height="1055" extended-state="4" />
+    <frame x="1069" y="25" width="851" height="1055" extended-state="4" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
@@ -317,7 +319,7 @@
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20546874" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.30904818" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="2" />
@@ -791,8 +793,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/handlers/TestIntentHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="39" column="8" selection-start-line="39" selection-start-column="8" selection-end-line="39" selection-end-column="8" />
+        <state relative-caret-position="255">
+          <caret line="27" column="41" lean-forward="true" selection-start-line="27" selection-start-column="41" selection-end-line="27" selection-end-column="41" />
           <folding>
             <element signature="e#470#471#0" expanded="true" />
             <element signature="e#550#551#0" expanded="true" />
