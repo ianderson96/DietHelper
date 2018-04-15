@@ -1,4 +1,6 @@
+handlers/IngredientHandler.class
 DietHelperStreamHandler.class
+handlers/OneRestrictionPluralHandler.class
 handlers/LaunchRequestHandler.class
 handlers/TestIntentHandler.class
 handlers/CancelandStopIntentHandler.class
