@@ -32,7 +32,7 @@ public class OneRestrictionHandler implements RequestHandler {
 
 
         String speechText;
-        if(foodSlot != null && dietSlot != null && ingredientSlot == null){
+        if(foodSlot != null && dietSlot != null){
             //run food diet call
             String foodText = foodSlot.getValue();
             String dietText = dietSlot.getValue();
@@ -52,5 +52,11 @@ public class OneRestrictionHandler implements RequestHandler {
                 .withSpeech(speechText)
                 .build();
     }
+//
+//    private String parseUserDiet(String diet){
+//        Map<String, String> dietMap = new Map<String, String>();
+//        dietMap.put("dairy free","dairy_free");
+//        return "test";
+//    }
 
 }
