@@ -20,8 +20,8 @@ public class ApiHandler {
         String food = new String("twizzlers");
         String badge = new String("vegan");
         String ingredient = new String("salt");
-//        System.out.println(api.containsBadge(food, badge));
-        System.out.println(api.containsIngredient(food, ingredient));
+        System.out.println(api.containsBadge(food, badge));
+//        System.out.println(api.containsIngredient(food, ingredient));
 
     }
 

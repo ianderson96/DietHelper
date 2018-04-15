@@ -10,11 +10,11 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
 
-public class OneRestrictionHandler implements RequestHandler {
+public class OneRestrictionPluralHandler implements RequestHandler {
 
     @Override
     public boolean canHandle(HandlerInput input) {
-        return input.matches(Predicates.intentName("OneRestrictionHandler"));
+        return input.matches(Predicates.intentName("OneRestrictionPluralHandler"));
     }
 
     @Override
@@ -48,13 +48,13 @@ public class OneRestrictionHandler implements RequestHandler {
                 System.out.println("The parsed diet text is: " + parsedDietText);
                 Boolean bool = api.containsBadge(foodText, parsedDietText);
                 if (bool) {
-                    speechText = String.format("Yes, "+foodText+" is "+dietText);
+                    speechText = String.format("Yes, "+foodText+" are "+dietText);
                     return input.getResponseBuilder()
                             .withSpeech(speechText)
                             .build();
                 }
                 else {
-                    speechText = String.format("No, "+foodText+" is not "+dietText);
+                    speechText = String.format("No, "+foodText+" are not "+dietText);
                     return input.getResponseBuilder()
                             .withSpeech(speechText)
                             .build();
@@ -99,6 +99,6 @@ public class OneRestrictionHandler implements RequestHandler {
         } else {
             return null;
         }
-        }
+    }
 
 }
