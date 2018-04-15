@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="31a54ccb-b957-4cd1-8517-f7dfd19adf8a" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/handlers/OneRestrictionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/handlers/OneRestrictionHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/handlers/OneRestrictionPluralHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/handlers/OneRestrictionPluralHandler.java" afterDir="false" />
-    </list>
+    <list default="true" id="31a54ccb-b957-4cd1-8517-f7dfd19adf8a" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -41,11 +38,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="OneRestrictionHandler.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="OneRestrictionHandler.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/handlers/OneRestrictionHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="65" column="8" lean-forward="true" selection-start-line="65" selection-start-column="8" selection-end-line="67" selection-end-column="25" />
+            <state relative-caret-position="975">
+              <caret line="65" column="41" lean-forward="true" selection-start-line="65" selection-start-column="41" selection-end-line="65" selection-end-column="41" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#2061#2077#0" expanded="true" />
@@ -67,11 +64,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="IngredientHandler.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="IngredientHandler.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/handlers/IngredientHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="373">
-              <caret line="58" column="5" lean-forward="true" selection-start-line="58" selection-start-column="5" selection-end-line="58" selection-end-column="5" />
+            <state relative-caret-position="78">
+              <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
               <folding>
                 <element signature="e#443#444#0" expanded="true" />
                 <element signature="e#516#517#0" expanded="true" />
@@ -804,24 +801,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/handlers/OneRestrictionHandler.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/handlers/IngredientHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="65" column="8" lean-forward="true" selection-start-line="65" selection-start-column="8" selection-end-line="67" selection-end-column="25" />
+        <state relative-caret-position="78">
+          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2061#2077#0" expanded="true" />
+            <element signature="e#443#444#0" expanded="true" />
+            <element signature="e#516#517#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/handlers/IngredientHandler.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/handlers/OneRestrictionHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="373">
-          <caret line="58" column="5" lean-forward="true" selection-start-line="58" selection-start-column="5" selection-end-line="58" selection-end-column="5" />
+        <state relative-caret-position="975">
+          <caret line="65" column="41" lean-forward="true" selection-start-line="65" selection-start-column="41" selection-end-line="65" selection-end-column="41" />
           <folding>
-            <element signature="e#443#444#0" expanded="true" />
-            <element signature="e#516#517#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#2061#2077#0" expanded="true" />
           </folding>
         </state>
       </provider>
