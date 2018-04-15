@@ -49,25 +49,18 @@ public class OneRestrictionPluralHandler implements RequestHandler {
                 Boolean bool = api.containsBadge(foodText, parsedDietText);
                 if (bool) {
                     speechText = String.format("Yes, "+foodText+" are "+dietText);
-                    return input.getResponseBuilder()
-                            .withSpeech(speechText)
-                            .build();
+
                 }
                 else {
                     speechText = String.format("No, "+foodText+" are not "+dietText);
-                    return input.getResponseBuilder()
-                            .withSpeech(speechText)
-                            .build();
+
                 }
             }
             else {
                 speechText = String.format("I do not understand "+dietText);
-                return input.getResponseBuilder()
-                        .withSpeech(speechText)
-                        .build();
             }
         }else{
-            speechText = String.format("Sorry that was in an invalid request");
+            speechText = String.format("Sorry, that was in an invalid request");
         }
 
         return input.getResponseBuilder()

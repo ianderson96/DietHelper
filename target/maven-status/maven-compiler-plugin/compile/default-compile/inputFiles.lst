@@ -4,5 +4,7 @@
 /Users/iananderson/Documents/DietHelper/DietHelper/src/main/java/handlers/HelpIntentHandler.java
 /Users/iananderson/Documents/DietHelper/DietHelper/src/main/java/handlers/SessionEndedRequestHandler.java
 /Users/iananderson/Documents/DietHelper/DietHelper/src/main/java/handlers/TestIntentHandler.java
+/Users/iananderson/Documents/DietHelper/DietHelper/src/main/java/handlers/IngredientHandler.java
+/Users/iananderson/Documents/DietHelper/DietHelper/src/main/java/handlers/OneRestrictionPluralHandler.java
 /Users/iananderson/Documents/DietHelper/DietHelper/src/main/java/handlers/LaunchRequestHandler.java
 /Users/iananderson/Documents/DietHelper/DietHelper/src/main/java/DietHelperStreamHandler.java
