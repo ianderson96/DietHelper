@@ -22,11 +22,11 @@ public class TestIntentHandler implements RequestHandler {
     @Override
     public Optional<Response> handle(HandlerInput input) {
       String speechText;
-        try {
-          Class.forName("com.mysql.jdbc.Driver");
-        }catch (ClassNotFoundException err){
-          speechText = err.getMessage( );
-        }
+//         try {
+//           Class.forName("com.mysql.jdbc.Driver");
+//         }catch (ClassNotFoundException err){
+//           speechText = err.getMessage( );
+//         }
         try {
           String databaseName = "Users";
           String instanceConnectionName = "diethelper-201120:us-east1:users";
