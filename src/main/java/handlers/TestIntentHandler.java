@@ -79,13 +79,19 @@ public class TestIntentHandler implements RequestHandler {
           speechText = err.getMessage( );
         }
         try {
-          String databaseName = "users";
+          String databaseName = "Users";
           String instanceConnectionName = "diethelper-201120:us-east1:users";
           //String jdbcUrl = "jdbc:mysql://google/%s?cloudSqlInstance=%s&socketFactory=com.google.cloud.sql.mysql.SocketFactory:"+instanceConnectionName+"/"+databaseName+"?user=root";
           //Connection con = DriverManager.getConnection("jdbc:mysql://35.185.24.120:diethelper-201120:us-east1:users?user=root");
           //String jdbcUrl = String.format("jdbc:mysql://google/%s?cloudSqlInstance=%s&socketFactory=com.google.cloud.sql.mysql.SocketFactory",databaseName,instanceConnectionName);
-          String jdbcUrl = "jdbc:mysql://google/Users?cloudSqlInstance=diethelper-201120:us-east1:users&socketFactory=com.google.cloud.sql.mysql.SocketFactory";
-//           Properties connectionProps = new Properties();
+          //String jdbcUrl = "jdbc:mysql://google/Users?cloudSqlInstance=diethelper-201120:us-east1:users&socketFactory=com.google.cloud.sql.mysql.SocketFactory";
+          String jdbcUrl = String.format(
+    "jdbc:postgresql://google/%s?socketFactory=com.google.cloud.sql.postgres.SocketFactory"
+        + "&socketFactoryArg=%s",
+    databaseName,
+    instanceConnectionName);
+           
+          //Properties connectionProps = new Properties();
 //           connectionProps.put("user", "root");
 //           Connection con = DriverManager.getConnection(jdbcUrl,"root", "");
 //           try (Statement statement = connection.createStatement()) {
