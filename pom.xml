@@ -6,6 +6,14 @@
 
     <groupId>dietHelper</groupId>
     <artifactId>dietHelper</artifactId>
+    <properties>
+      <appengine.app.appId>DietHelper</appengine.app.appId>
+      <appengine.app.version>1</appengine.app.version>
+      <appengine.target.version>1.9.48</appengine.target.version>
+      <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+      <cloudsql.url>jdbc:google:mysql://diethelper-201120:us-east1:users?user=root</cloudsql.url>
+      <cloudsql.url.dev>jdbc:mysql://localhost/users?user=root</cloudsql.url.dev>
+    </properties>
     <version>1.0-SNAPSHOT</version>
     <build>
         <plugins>
@@ -21,6 +29,27 @@
     </build>
 
     <dependencies>
+           <dependency>
+            <groupId>com.google.appengine</groupId>
+            <artifactId>appengine-api-1.0-sdk</artifactId>
+            <version>${appengine.target.version}</version>
+          </dependency>
+          <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>servlet-api</artifactId>
+            <version>2.5</version>
+            <scope>provided</scope>
+          </dependency>
+          <dependency>
+            <groupId>jstl</groupId>
+            <artifactId>jstl</artifactId>
+            <version>1.2</version>
+          </dependency>
+          <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>5.1.25</version>
+          </dependency>
         <dependency>
             <groupId>com.amazon.alexa</groupId>
             <artifactId>ask-sdk</artifactId>
