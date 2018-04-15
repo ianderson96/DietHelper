@@ -1,10 +1,12 @@
 package handlers;
 
+import api.ApiHandler;
 import com.amazon.ask.dispatcher.request.handler.HandlerInput;
 import com.amazon.ask.dispatcher.request.handler.RequestHandler;
 import com.amazon.ask.model.*;
 import com.amazon.ask.request.Predicates;
 
+import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
 
@@ -23,6 +25,7 @@ public class OneRestrictionHandler implements RequestHandler {
         IntentRequest intentRequest = (IntentRequest) request;
         Intent intent = intentRequest.getIntent();
         Map<String, Slot> slots = intent.getSlots();
+        ApiHandler api = new ApiHandler();
 
 
         Slot foodSlot = slots.get("food");
@@ -34,11 +37,26 @@ public class OneRestrictionHandler implements RequestHandler {
         System.out.println("ingredientSlot: "+ingredientSlot);
 
         String speechText;
+        String parsedDietText;
         if(foodSlot.getValue() != null && dietSlot.getValue() != null){
             //run food diet call
             String foodText = foodSlot.getValue();
             String dietText = dietSlot.getValue();
-            speechText = String.format("The food is: "+foodText+" The diet is: "+dietText);
+//            speechText = String.format("The food is: "+foodText+" The diet is: "+dietText);
+            if (this.parseUserDiet(dietText) != null) {
+                parsedDietText = this.parseUserDiet(dietText);
+                Boolean bool = api.containsBadge(foodText, parsedDietText);
+                if (bool) {
+                    speechText = String.format("Yes, "+foodText+" is "+dietText);
+                }
+                else {
+                    speechText = String.format("No, "+foodText+" is not "+dietText);
+                }
+                speechText = String.format("");
+            }
+            else {
+                speechText = String.format("I do not understand "+dietText);
+            }
         }else if(ingredientSlot.getValue() != null){
             //Check if food as ingredients
             String foodText = foodSlot.getValue();
@@ -54,11 +72,31 @@ public class OneRestrictionHandler implements RequestHandler {
                 .withSpeech(speechText)
                 .build();
     }
-//
-//    private String parseUserDiet(String diet){
-//        Map<String, String> dietMap = new Map<String, String>();
-//        dietMap.put("dairy free","dairy_free");
-//        return "test";
-//    }
+
+    private String parseUserDiet(String diet) {
+        Map<String, String> dietMap = new HashMap<String, String>();
+        dietMap.put("dairy free","dairy_free");
+        dietMap.put("gluten free","gluten_free");
+        dietMap.put("nut free","nut_free");
+        dietMap.put("seafood free","seafood_free");
+        dietMap.put("shellfish free","shellfish_free");
+        dietMap.put("wheat free","wheat_free");
+        dietMap.put("peanut free","peanut_free");
+        dietMap.put("soy free","soy_free");
+        dietMap.put("grain free","grain_free");
+        dietMap.put("sesame free","sesame_free");
+        dietMap.put("keto","ketogenic");
+        dietMap.put("paleo","paleo");
+        dietMap.put("vegan","vegan");
+        dietMap.put("vegetarian","vegetarian");
+        dietMap.put("primal","primal");
+        dietMap.put("whole thirty","whole_30");
+        dietMap.put("whole 30","whole_30");
+        if (dietMap.containsKey(diet)) {
+            return dietMap.get(diet);
+        } else {
+            return null;
+        }
+        }
 
 }
