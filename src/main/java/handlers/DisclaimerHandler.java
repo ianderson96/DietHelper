@@ -13,7 +13,7 @@ public class DisclaimerHandler implements RequestHandler {
 
     @Override
     public boolean canHandle(HandlerInput input) {
-        return input.matches(intentName("AMAZON.HelpIntent"));
+        return input.matches(intentName("DisclaimerHandler"));
     }
 
     @Override
