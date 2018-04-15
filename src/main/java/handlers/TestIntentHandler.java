@@ -36,7 +36,7 @@ public class TestIntentHandler implements RequestHandler {
     "jdbc:mysql://google/%s?cloudSqlInstance=%s&"
         + "socketFactory=com.google.cloud.sql.mysql.SocketFactory",
     databaseName,
-    instanceConnectionName);
+    instanceConnectionName);    
           Connection con = DriverManager.getConnection(jdbcUrl,"root","DietHelper");
           speechText = "Hello world: you are in the test intent";
         }
