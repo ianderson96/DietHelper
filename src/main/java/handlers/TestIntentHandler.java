@@ -37,7 +37,7 @@ public class TestIntentHandler implements RequestHandler {
         + "socketFactory=com.google.cloud.sql.mysql.SocketFactory",
     databaseName,
     instanceConnectionName);
-          Connection con = DriverManager.getConnection(jdgbUrl,"root","DietHelper");
+          Connection con = DriverManager.getConnection(jdbcUrl,"root","DietHelper");
           speechText = "Hello world: you are in the test intent";
         }
           catch ( SQLException err ) {
