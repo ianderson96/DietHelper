@@ -29,15 +29,17 @@ public class OneRestrictionHandler implements RequestHandler {
         Slot dietSlot = slots.get("diet");
         Slot ingredientSlot = slots.get("ingredient");
 
-
+        System.out.println("foodslot: "+foodSlot);
+        System.out.println("dietSlot: "+dietSlot);
+        System.out.println("ingredientSlot: "+ingredientSlot);
 
         String speechText;
-        if(foodSlot != null && dietSlot != null && ingredientSlot == null){
+        if(foodSlot.getValue() != null && dietSlot.getValue() != null){
             //run food diet call
             String foodText = foodSlot.getValue();
             String dietText = dietSlot.getValue();
             speechText = String.format("The food is: "+foodText+" The diet is: "+dietText);
-        }else if(foodSlot != null && ingredientSlot != null){
+        }else if(ingredientSlot.getValue() != null){
             //Check if food as ingredients
             String foodText = foodSlot.getValue();
             String ingredientText = ingredientSlot.getValue();
@@ -52,5 +54,11 @@ public class OneRestrictionHandler implements RequestHandler {
                 .withSpeech(speechText)
                 .build();
     }
+//
+//    private String parseUserDiet(String diet){
+//        Map<String, String> dietMap = new Map<String, String>();
+//        dietMap.put("dairy free","dairy_free");
+//        return "test";
+//    }
 
 }
