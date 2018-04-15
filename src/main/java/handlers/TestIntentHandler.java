@@ -42,8 +42,7 @@ public class TestIntentHandler implements RequestHandler {
         
 
         return input.getResponseBuilder()
-                .withSpeech(speechText)
-                .withSimpleCard("HelloWorld", speechText)
+                .withSpeech("speechText")
                 .build();
     }
 
