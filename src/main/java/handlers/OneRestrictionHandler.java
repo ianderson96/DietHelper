@@ -42,16 +42,17 @@ public class OneRestrictionHandler implements RequestHandler {
             //run food diet call
             String foodText = foodSlot.getValue();
             String dietText = dietSlot.getValue();
+            String foodTitle = api.getProductName(foodText);
 //            speechText = String.format("The food is: "+foodText+" The diet is: "+dietText);
             if (this.parseUserDiet(dietText) != null) {
                 parsedDietText = this.parseUserDiet(dietText);
                 System.out.println("The parsed diet text is: " + parsedDietText);
                 Boolean bool = api.containsBadge(foodText, parsedDietText);
                 if (bool) {
-                    speechText = String.format("Yes, "+foodText+" is "+dietText);
+                    speechText = String.format("Yes, I found that "+foodTitle+" is "+dietText);
                 }
                 else {
-                    speechText = String.format("No, "+foodText+" is not "+dietText);
+                    speechText = String.format("No, I found that "+foodTitle+" is not "+dietText);
 
                 }
             }

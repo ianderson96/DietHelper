@@ -42,17 +42,18 @@ public class OneRestrictionPluralHandler implements RequestHandler {
             //run food diet call
             String foodText = foodSlot.getValue();
             String dietText = dietSlot.getValue();
+            String foodTitle = api.getProductName(foodText);
 //            speechText = String.format("The food is: "+foodText+" The diet is: "+dietText);
             if (this.parseUserDiet(dietText) != null) {
                 parsedDietText = this.parseUserDiet(dietText);
                 System.out.println("The parsed diet text is: " + parsedDietText);
                 Boolean bool = api.containsBadge(foodText, parsedDietText);
                 if (bool) {
-                    speechText = String.format("Yes, "+foodText+" are "+dietText);
+                    speechText = String.format("Yes, I found that "+foodTitle+" are "+dietText);
 
                 }
                 else {
-                    speechText = String.format("No, "+foodText+" are not "+dietText);
+                    speechText = String.format("No, I found that "+foodTitle+" are not "+dietText);
 
                 }
             }

@@ -42,12 +42,13 @@ public class IngredientHandler implements RequestHandler {
             //Check if food as ingredients
             String foodText = foodSlot.getValue();
             String ingredientText = ingredientSlot.getValue();
+            String foodTitle = api.getProductName(foodText);
             Boolean bool = api.containsIngredient(foodText, ingredientText);
             if (bool) {
-                speechText = String.format("Yes, " + foodText + " does contain " + ingredientText);
+                speechText = String.format("Yes, I found that " + foodTitle + " does contain " + ingredientText);
             }
             else {
-                speechText = String.format("No, " + foodText + " doesn't contain " + ingredientText);
+                speechText = String.format("No, I found that " + foodTitle + " doesn't contain " + ingredientText);
             }
         }
         else{
