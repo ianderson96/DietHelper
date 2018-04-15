@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="31a54ccb-b957-4cd1-8517-f7dfd19adf8a" name="Default" comment="" />
+    <list default="true" id="31a54ccb-b957-4cd1-8517-f7dfd19adf8a" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/target/classes/DietHelperStreamHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/handlers/CancelandStopIntentHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/handlers/HelpIntentHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/handlers/LaunchRequestHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/handlers/OneRestrictionHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/handlers/SessionEndedRequestHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/handlers/TestIntentHandler.class" beforeDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -16,8 +24,8 @@
       <file leaf-file-name="pom.xml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
-              <caret line="27" column="21" lean-forward="true" selection-start-line="27" selection-start-column="21" selection-end-line="27" selection-end-column="21" />
+            <state relative-caret-position="510">
+              <caret line="34" column="21" selection-start-line="34" selection-start-column="21" selection-end-line="34" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -303,7 +311,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1165" y="25" width="755" height="1055" extended-state="4" />
-    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -795,8 +802,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="27" column="21" lean-forward="true" selection-start-line="27" selection-start-column="21" selection-end-line="27" selection-end-column="21" />
+        <state relative-caret-position="510">
+          <caret line="34" column="21" selection-start-line="34" selection-start-column="21" selection-end-line="34" selection-end-column="21" />
         </state>
       </provider>
     </entry>
