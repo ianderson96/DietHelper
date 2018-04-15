@@ -23,38 +23,6 @@ public class TestIntentHandler implements RequestHandler {
     @Override
     public Optional<Response> handle(HandlerInput input) {
       String speechText = "Hello world: you are in the test intent";
-        try {
-          Class.forName("com.mysql.jdbc.Driver");
-        }catch (ClassNotFoundException err){
-          speechText = err.getMessage( );
-        }
-        try {
-          String databaseName = "Users";
-          String instanceConnectionName = "diethelper-201120:us-east1:users";
-          //String jdbcUrl = "jdbc:mysql://google/%s?cloudSqlInstance=%s&socketFactory=com.google.cloud.sql.mysql.SocketFactory:"+instanceConnectionName+"/"+databaseName+"?user=root";
-          //Connection con = DriverManager.getConnection("jdbc:mysql://35.185.24.120:diethelper-201120:us-east1:users?user=root");
-          //String jdbcUrl = String.format("jdbc:mysql://google/%s?cloudSqlInstance=%s&socketFactory=com.google.cloud.sql.mysql.SocketFactory",databaseName,instanceConnectionName);
-          //String jdbcUrl = "jdbc:mysql://google/Users?cloudSqlInstance=diethelper-201120:us-east1:users&socketFactory=com.google.cloud.sql.mysql.SocketFactory";
-          String jdbcUrl = String.format("jdbc:postgresql://google/%s?socketFactory=com.google.cloud.sql.postgres.SocketFactory&socketFactoryArg=%s",databaseName,instanceConnectionName);
-          Connection con = DriverManager.getConnection(jdbcUrl,"root", "");
-          //Properties connectionProps = new Properties();
-//           connectionProps.put("user", "root");
-//           Connection con = DriverManager.getConnection(jdbcUrl,"root", "");
-//           try (Statement statement = connection.createStatement()) {
-//             ResultSet resultSet = statement.executeQuery("SHOW TABLES");
-//             while (resultSet.next()) {
-//               System.out.println(resultSet.getString(1));
-//             }
-//           }
-          
-          System.out.println("Pass");
-          //speechText = "Hello world: you are in the test intent";
-        }
-          catch ( SQLException err ) {
-          speechText = err.getMessage( );
-          System.out.println("Fail");
-        }
-        
 
         return input.getResponseBuilder()
                 .withSpeech(speechText)

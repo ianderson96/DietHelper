@@ -61,7 +61,7 @@ public class OneRestrictionHandler implements RequestHandler {
 
             }
         }else{
-            speechText = String.format("Sorry, that was in an invalid request");
+            speechText = String.format("Sorry I didn't understand what you said. What I heard was are " + foodText + dietText);
         }
 
         return input.getResponseBuilder()
